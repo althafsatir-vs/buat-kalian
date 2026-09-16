@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memori & Kegabutan Kita ✨</title>
+    <style>
+        /* CSS UTAMA & ANIMASI */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            color: #4a4a4a;
+            text-align: center;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        header {
+            background-color: #fb6f92;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { font-size: 2rem; }
+        
+        /* NAVIGASI MENYEBELKAN TAPI LUCU */
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav button {
+            background-color: #ffe5ec;
+            border: 2px solid #fb6f92;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #fb6f92;
+            transition: 0.3s;
+        }
+        nav button.active, nav button:hover {
+            background-color: #fb6f92;
+            color: white;
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* KONTEN HALAMAN */
+        .page {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: popIn 0.5s ease-out;
+        }
+        .page.active { display: block; }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* GRID FOTO / GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .photo-card {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: rotate(calc(var(--r, 0) * 1deg));
+            transition: 0.3s;
+        }
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+        .photo-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .photo-card p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* ELEMEN INTERAKTIF & GAME */
+        .btn-funny {
+            background: #ff8fab;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #fb6f92;
+            margin: 20px;
+        }
+        .btn-funny:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+        .compliment-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #ff8fab;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            text-align: left;
+            border-left: 3px dashed #fb6f92;
+            padding-left: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '📌';
+            position: absolute;
+            left: -33px;
+            background: #ffe5ec;
+            border-radius: 50%;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About 3an</h1>
+        <p>Biar kalian selalu inget kalo kita pernah susah senang bersama</p>
+    </header>
+
+    <!-- NAVIGASI 5 HALAMAN -->
+    <nav>
+        <button onclick="showPage('home')" id="btn-home" class="active">🏠 Utama</button>
+        <button onclick="showPage('galeri1')" id="btn-galeri1">📸 Moment bertiga</button>
+        <button onclick="showPage('galeri2')" id="btn-galeri2">🤪 Paling Bagus</button>
+        <button onclick="showPage('timeline')" id="btn-timeline">⏳ Awal Mula..</button>
+        <button onclick="showPage('games')" id="btn-games">🎲 Pencet aja</button>
+    </nav>
+
+    <!-- HALAMAN 1: HOME -->
+    <div id="home" class="page active">
+        <h2>Halo Adik-Adik ku</h2>
+        <p style="margin: 15px 0;">Web ini dibuat khusus untuk mengenang segala bentuk kegiatan yang pernah kita bertiga lakuin bersama.
+
+        </p>
+        <div class="photo-card" style="--r: 2; max-width: 400px; margin: 20px auto;">
+            <img src="c:\Users\wyrmz\Downloads\yondir.jpeg". alt="Foto Utama Kita">
+            <p>Ini moment kita yang semoga ga akan lupa</p>
+        </div>
+        <p>Pencet tombol diatas untuk melihat ke anehan kalian berdua</p> 
+    </div>
+
+    <!-- HALAMAN 2: MOMEN MANIS -->
+    <div id="galeri1" class="page">
+        <h2>🌸 Moment Moment Bertiga 🌸</h2>
+        <p>Semoga kalian ga lupa ya sama semua ini.</p>
+        <div class="gallery">
+            <div class="photo-card" style="--r: -3"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.04.jpeg" alt="Foto"><p>Pas pertama kali foto</p></div>
+            <div class="photo-card" style="--r: 4"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.04 (1).jpeg" alt="Foto"><p>Sakit woi</p></div>
+            <div class="photo-card" style="--r: -2"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.03.jpeg" alt="Foto"><p>ini apasiee</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.02.jpeg" alt="Foto"><p>Hari paling bahagia sedunia 🎉</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.02 (1).jpeg" alt="Foto"><p>oke love</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.03 (1).jpeg" alt="Foto"><p>gaya apasi ini</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.03 (2).jpeg" alt="Foto"><p>kenapanyakk</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.05.03 (3).jpeg" alt="Foto"><p>oke</p></div>
+            <div class="photo-card" style="--r: 1"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 11.12.27.jpeg" alt="Foto"><p>ngapain si yohh</p></div>
+        </div>
+    </div>
+
+    <!-- HALAMAN 3: FOTO AIB -->
+    <div id="galeri2" class="page">
+        <h2>🤡 WKKWKK JELEK 🤡</h2>
+        <p>Aset masa depan ni WKWK</p>
+        <div class="gallery">
+            <div class="photo-card" style="--r: 5"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 10.09.17.jpeg" alt="Aib"><p>kamu ngapain dir?? </p></div>
+            <div class="photo-card" style="--r: -4"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 10.02.12.jpeg" alt="Aib"><p>muka pas dapet tagihan paylater</p></div>
+            <div class="photo-card" style="--r: 3"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 10.04.24.jpeg" alt="Aib"><p>Laper cu 👽</p></div>
+            <div class="photo-card" style="--r: -2"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 10.04.25.jpeg" alt="Aib"><p>Pas lagi mode reog 🦁</p></div>
+            <div class="photo-card" style="--r: -1"><img src="gambar/WhatsApp Image 2026-08-29 at 10.02.13.jpeg" alt="Aib"><p>gosong deh</p></div>
+            <div class="photo-card" style="--r: -2"><img src="c:\Users\wyrmz\Downloads\WhatsApp Image 2026-08-29 at 10.02.13 (1).jpeg" alt="Aib"><p>ngantukkk</p></div>
+        </div>
+    </div>
+
+    <!-- HALAMAN 4: TIMELINE -->
+    <div id="timeline" class="page">
+        <h2>⏳ Kilas Balik Perjalanan ⏳</h2>
+        <p>Garis waktu sejak kita pertama kali saling kenal sampai sejauh ini.</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <strong>Awal Mula:</strong> Berawal dari Seleksi PPGJ'45 Tahun 2026
+            </div>
+            <div class="timeline-item">
+                <strong>Fase Akrab:</strong> Pemilihan kadiksuh + Pengalihan Kadiksuh
+            </div>
+            <div class="timeline-item">
+                <strong>Fase Diklat:</strong> Melewati fase diklat bertiga, dengan perasaan campur aduk
+            </div>
+            <div class="timeline-item">
+                <strong>Sekarang:</strong> Usai pengibaran masih bertiga. semoga selamannya
+            </div>
+        </div>
+        <div class="photo-card" style="--r: -1; max-width: 300px; margin: 0 auto;"><img src="c:\Users\wyrmz\Downloads\yondir.jpeg" alt="Bersama"><p></p></div>
+    </div>
+
+    <!-- HALAMAN 5: GAMES / TOMBOL LUCU -->
+    <div id="games" class="page">
+        <h2>🎲 Mesin Jelek Otomatis 🎲</h2>
+        <p>biar selalu inget gue</p>
+        
+        <button class="btn-funny" onclick="generateCompliment()">Klik untuk Pujian! 🌟</button>
+        <div class="compliment-box" id="complimentText">Klik tombol di atas untuk memunculkan teks magis...</div>
+        
+        <button class="btn-funny" id="runBtn" onmouseover="kabur()" style="position: relative; margin-top: 40px; background: #6c757d;">Jangan Di-Klik ❌</button>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK NAVIGASI & INTERAKSI -->
+  
+        <script>
+        // Fungsi pindah halaman
+        function showPage(pageId) {
+            // Sembunyikan semua halaman
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Matikan status active semua tombol nav
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Tampilkan halaman & tombol terpilih
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('btn-' + pageId).classList.add('active');
+        }
+
+
+      // // Fitur halaman 5: Random Pujian
+const compliments = [
+    "capek itu sementara, bahagia selamanya!",
+    "proses kalian hari ini adalah hasil kalian besok.",
+    "gagal sekali bukan berarti gagal selamanya!",
+    "gagal hari ini, masih ada hari esok!!!",
+    "sekali pergi, berjanji untuk tidak kembali.",
+    "jangan lupain semua kenangan kita bertiga yaaaaaaaaaaaaaaaa!"
+]; // <-- Pastikan bersih seperti ini
+
+function generateCompliment() {
+    const textElement = document.getElementById('complimentText');
+    const randomIndex = Math.floor(Math.random() * compliments.length);
+    
+    // Tampilkan teks acak ke HTML
+    textElement.innerText = compliments[randomIndex];
+}
+
+
+function kabur() {
+    const button = document.getElementById('runBtn');
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 100 - 50;
+    button.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+</script>
+</body>
+</html>
